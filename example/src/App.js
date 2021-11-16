@@ -15,15 +15,27 @@ const App = () => {
     REACT_APP_CHAT_USER_ID,
   } = process.env;
 
+  let kakaoRef = React.useRef(null);
+
   return (
     <div className="container">
-      <div className="bg"></div>
+      <div className="bg">
+        <button
+          onClick={() => {
+            const result = kakaoRef.current.openPopup('19');
+            console.log(`OPEN RESULT!!!  ${result}`);
+          }}
+        >
+          이얍!!!
+        </button>
+      </div>
       <KakaoChat
         connectionHeaders={connectHeaders}
         brandId={REACT_APP_CHAT_BRAND_ID}
         serverUrl={REACT_APP_CHAT_SERVER_URL}
         brandName={REACT_APP_CHAT_BRAND_NAME}
         userId={REACT_APP_CHAT_USER_ID}
+        ref={kakaoRef}
       />
     </div>
   );
