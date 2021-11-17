@@ -13,7 +13,7 @@ export const ChatRoomList = ({ onItemClick, data, ...props }) => {
       preventDoubleScroll(event, contentContainer.current)
     );
     return () => {
-      contentContainer.current.removeEventListener('mousewheel', (event) =>
+      contentContainer.current?.removeEventListener('mousewheel', (event) =>
         preventDoubleScroll(event, contentContainer.current)
       );
     };
