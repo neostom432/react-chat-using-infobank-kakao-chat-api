@@ -112,7 +112,7 @@ export const Messenger = React.forwardRef(
     };
 
     const openPopup = (roomId) => {
-      const target = chatRoomList.find((d) => d.roomId === roomId);
+      const target = chatRoomList.find((d) => d.roomId == roomId);
 
       if (target) {
         onChatPopupRequest(target);
