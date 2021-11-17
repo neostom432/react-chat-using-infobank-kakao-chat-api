@@ -287,10 +287,10 @@ export const ChatPopup = ({
     );
     contentContainer.current.addEventListener('scroll', onScroll);
     return () => {
-      contentContainer.current.removeEventListener('mousewheel', (event) =>
+      contentContainer.current?.removeEventListener('mousewheel', (event) =>
         preventDoubleScroll(event, contentContainer.current)
       );
-      contentContainer.current.removeEventListener('scroll', onScroll);
+      contentContainer.current?.removeEventListener('scroll', onScroll);
     };
   }, []);
 
