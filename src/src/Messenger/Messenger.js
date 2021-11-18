@@ -148,7 +148,13 @@ export const Messenger = React.forwardRef(
           </div>
           <ArrowIcon className={cx('minimize-icon', minimized ? 'flip' : '')} />
         </div>
-        <ChatRoomList onItemClick={onChatPopupRequest} data={chatRoomList} />
+        <ChatRoomList
+          serverUrl={serverUrl}
+          brandId={brandId}
+          onItemClick={onChatPopupRequest}
+          data={chatRoomList}
+          connectionHeaders={connectionHeaders}
+        />
       </div>
     );
   }

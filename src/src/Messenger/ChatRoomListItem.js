@@ -2,7 +2,12 @@ import classNames from 'classnames/bind';
 import React, { useState } from 'react';
 import styles from './ChatRoomListItem.module.css';
 
-export const ChatRoomListItem = ({ onItemClick, data, ...props }) => {
+export const ChatRoomListItem = ({
+  onItemClick,
+  data,
+  onChatRoomContextMenuOpen,
+  ...props
+}) => {
   const cx = classNames.bind(styles);
   const isValid =
     data.unansweredChats &&
@@ -63,6 +68,10 @@ export const ChatRoomListItem = ({ onItemClick, data, ...props }) => {
       className={cx('container')}
       onClick={() => {
         onItemClick(data);
+      }}
+      onContextMenu={(e) => {
+        e.preventDefault();
+        onChatRoomContextMenuOpen(e, data);
       }}
     >
       <div className={cx('header')}>
