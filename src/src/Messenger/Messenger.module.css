@@ -117,3 +117,32 @@ textarea {
 .container .search .search-input::placeholder {
   color: #b5b5c3;
 }
+
+.chatMenu {
+  position: absolute;
+  width: 120px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #d6d6e0;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.chatMenu .chatMenuItem {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.chatMenu .chatMenuItem:hover {
+  background-color: #d6d6e0;
+}
+
+.chatMenu .chatMenuItem .chatMenuItemLabel {
+  cursor: pointer;
+}
